@@ -48,11 +48,10 @@ app.use(
       resave: false,
       saveUninitialized: false,   //was true
       store: new pgSession({
-        // tableName : 'test',   // Use another table-name than the default "session" one
+        tableName : 'test',   // Use another table-name than the default "session" one
         // pgPromise: 'postgres://ctp_user:ctp_pass@localhost:5432/fitszy_db',
         pool: conObject,
-        ttl: 3600,
-        createTableIfMissing: true,  //this will only work if the table name part isnt there.
+        ttl: 3600
       }),
       cookie: {
         maxAge: 3600000,

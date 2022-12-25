@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        var(--palette-color3),
+        #6b709f
+    );
+    left: -80px;
+    top: -80px;
+    z-index: -1;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        var(--palette-color1),
+        #e4555b
+    );
+    right: -30px;
+    bottom: -80px;
+}
+
+.title {
+    color:black;
+    text-align: center;
+    font-size: 35px;
+}
+
+.workouts {
+    display: flex;
+    width: 100%;
+    padding-left:0;
+    flex-wrap: wrap;
+    padding: 40px calc((100% - (255px * 3)) / 2);
+}
+
+.workoutLinks {
+    height:300px;
+    width: 275px;
+    background-color: rgba(255,255,255,0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    /* padding: 50px 35px;   */
+    display: flex;
+    /* margin: 5px; */
+    /* justify-content: space-between;  */
+    /* flex: 0 0 33.333333%; */
+    flex: 0 0 215px;
+    margin: 1em 20px;
+}
+
+.workoutLinks a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.container {
+    padding: 30px 158px;
+    font-family: 'Poppins',sans-serif;
+}
+
+.createworkoutlink {
+    width: 100%;
+    text-align: right;
+}
+
+.createworkoutlink a {
+    background-color: rgba(255,255,255,0.13);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    text-decoration: none;
+    color:black;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}

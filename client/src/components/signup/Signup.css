@@ -1,0 +1,46 @@
+
+.Signup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+
+
+
+.signup_button:hover{
+    background-color: #2B2D42;
+    color: red;
+}
+
+.login_button:hover {
+    background-color: #2B2D42;
+    color: white;
+}
+
+.signup_button {
+    font-family: var(--font-family);
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: var(--palette-color1);
+    margin-right: 12px;
+    border-radius: 4px;
+    color: black;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.login_button {
+    font-family: var(--font-family);
+    padding: 8px 16px;
+    border: solid black 2px;
+    border-radius: 4px;
+    text-decoration: none;
+    color:black;
+}
+
+
+
+

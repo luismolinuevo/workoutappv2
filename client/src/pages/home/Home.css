@@ -1,0 +1,8 @@
+*{
+  box-sizing: border-box;
+}
+.Home {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
