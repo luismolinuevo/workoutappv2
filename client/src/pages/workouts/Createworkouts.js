@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "../../pages/workouts/CreateWorkouts.css"
 
 //onsumbit that post to api
 //navigate to back to workout page
@@ -55,30 +56,32 @@ export default function Createworkouts() {
   // if (success) return <Navigate to="/" />;
 
   return (
-    <div className="col-10 col-md-8 col-lg-7">
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <input
-            type="text"
-            placeholder="Workout Title"
-            value={title}
-            className="form-control"
-            onChange={handleTitleChange}
-            autoFocus
-          />
-          <input
-            type="text"
-            placeholder="Workout Desc"
-            value={desc}
-            className="form-control"
-            onChange={handleDescChange}
-            autoFocus
-          />
-          <button type="submit" className="btn btn-primary">
-            Create Workout
-          </button>
-        </div>
-      </form>
+    <div className="container">
+      <div className="createWorkouts">
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="Workout Title"
+              value={title}
+              className="form-control"
+              onChange={handleTitleChange}
+              autoFocus
+            />
+            <input
+              type="text"
+              placeholder="Workout Desc"
+              value={desc}
+              className="form-control"
+              onChange={handleDescChange}
+              autoFocus
+            />
+            <button type="submit" className="btn btn-primary">
+              Create Workout
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

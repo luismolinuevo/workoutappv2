@@ -1,2 +1,51 @@
+body {
+    /* min-height: 100vh;  take this off fixed the extra space that I had on the bottom */
+    /* height: 100%; */
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    /* background: rgb(237,242,244);  */
+    /* background: linear-gradient(200deg, rgba(237,242,244,1) 0%, rgba(43,45,66,1) 100%);   */
 
+    background:#9a9ea8;
+    /* background: #1a1a1a; */
 
+    /* animation: gradient 15s ease infinite;   */
+    /* background-size: 400% 400%;     */
+  
+  } 
+  
+  .container {
+      width: 100%;
+      /* padding: 0px 80px; */
+      padding: 0px 100px;
+      font-family: 'Poppins',sans-serif;
+  }
+
+@media (max-width: 1110px) {
+    .container {
+		padding: 0px 70px;
+
+	}
+
+}
+
+@media (max-width: 800px) {
+	.container {
+		padding: 0px 60px;
+
+	}
+
+}
+
+@media (max-width: 350px) {
+	.container {
+		padding: 0px 25px;
+	}
+}
+
+@media (max-width: 260px) {
+    .container {
+		  padding: 0px 15px;
+	}
+}

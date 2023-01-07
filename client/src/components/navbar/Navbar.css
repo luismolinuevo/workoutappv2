@@ -1,26 +1,156 @@
-.Navbar {
-    display: flex;
-    justify-content: space-between;
-    width: 900px;
+header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	background-color: transparent;
+	color: #DB222A;
+	position: sticky;
+	top: 0;
+	bottom: 0;
+	margin-top: 10px;
+	
 }
 
-.Navbar a {
-    text-decoration:none;
-    /*color:black;*/
-    --h: 1.2em;
-
-    line-height: var(--h);
-    color: #0000;
-    text-shadow:
-        0 calc(-1*var(--_t,0em)) #000,
-        0 calc(var(--h) - var(--_t,0em)) #DB222A;
-    overflow: hidden;
-    transition: .3s;
-    font-family: var(--font-family);
+header.active {
+	background-color: black;
+	color: #F2F2F2;
+	opacity: 0.7;
 }
 
-
-
-.Navbar a:hover {
-  --_t: var(--h);
+header.active a {
+	color: #F2F2F2;
 }
+
+.navbar {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav a {
+	font-size: 20px;
+	font-weight: bold;
+	color:black;
+	/* color:white; */
+	margin: 0 1rem;
+	text-decoration: none;
+}
+
+nav a:hover {
+	border-bottom: 3px solid #DE6059;
+}
+
+header .nav-btn {
+	display: none;   
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #DE6059;
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+header div, nav {
+	display: flex;
+	align-items: center;
+}
+
+.logoutButton {
+	padding: 5px 5px;
+	font-size: 20px;
+	font-weight: bold;
+
+}
+
+@media only screen and (max-width: 1024px) {
+	header .nav-btn {
+		display: flex;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;  /*this fixed the bug where the right side of the page was pushed to the right. This put everything in the center*/
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: #DE6059;
+		transition: 1s;
+		transform: translateY(-100vh);
+		
+	}
+
+	header .responsive_nav {
+		transform: none;
+	}
+
+	header.active {
+		opacity: 1;
+
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+		color:white;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+}
+
+/* @media (max-width: 800px) {
+	.container {
+		padding: 0px 60px;
+	}
+} */
+
+@media (max-width: 350px) {
+	/* .container {
+		padding: 0px 25px;
+	} */
+
+	.logo {
+		font-size: 1.5rem;
+	}
+
+	header .nav-btn {
+		font-size: 1.5rem;
+	}
+
+	header {
+		margin-top: 5px;
+		height: 75;
+	}
+}
+
+@media (max-width: 260px) {
+	header {
+		margin-top: 0px;
+		height: 60px;
+	}
+
+	.logo {
+		font-size: 1.3rem;
+	}
+
+	header .nav-btn {
+		font-size: 1.3rem;
+	}
+
+}
+

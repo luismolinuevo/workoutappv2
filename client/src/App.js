@@ -4,17 +4,20 @@ import { AuthProvider } from "./context/AuthContext";
 import { Signup } from "./pages/signup/Signup";
 import LoginPage from "./pages/login/Login";
 import Test from "./components/extra/AuthButton"
-import { Header } from "./containers";
+import Navbar from "./components/navbar/Navbar";
 
 import ShowWorkouts from "./pages/workouts/ShowWorkouts"
 import CreateWorkouts from "./pages/workouts/Createworkouts"
 import Workouts from "./pages/workouts/Workouts";
 
 import './App.css';
-import {Home} from'./pages'
+import Home from'./pages/home/Home'
 import Exercise from "./pages/workouts/Exercise";
 import CreateExercise from "./pages/workouts/CreateExercise";
 import EditExercise from "./pages/workouts/EditExercise";
+
+import "./App.css";
+import PrivateRouteRequiresAuth from "./components/extra/PrivateRouteRequiresAuth"
 
 
 function App() {
@@ -22,25 +25,21 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
-        <Header />
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/signup" element={<Signup/>} />
-            <Route path="/login" element={<LoginPage/>} />
-            <Route path="/workouts/:id" element={<Workouts/>} />
-            <Route path="/createworkouts" element={<CreateWorkouts/>} />
-            <Route path="/workouts/:id/createexercise/:id" element={<CreateExercise/>}/>
-            <Route path="/test" element={<Test/>} />
-            <Route path="workouts" element={<ShowWorkouts/>}/>
-            <Route path="/workouts/:id/exercise/exerciseId/:id" element={<Exercise/>} />   {/*this lets each exercise have their own page (adding /workouts/:id to it) and in the link I call exerceiseId/:id*/}
-            <Route path="/workouts/:id/exercise/exerciseId/:id/exercise/edit/:id" element={<EditExercise/>} />
-          </Routes>
+          <Navbar />
+            <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route path="/signup" element={<Signup/>} />
+              <Route path="/login" element={<LoginPage/>} />
+              <Route path="/workouts/:id" element={ <PrivateRouteRequiresAuth><Workouts/></PrivateRouteRequiresAuth>} />
+              <Route path="/createworkouts" element={<PrivateRouteRequiresAuth><CreateWorkouts/></PrivateRouteRequiresAuth>} />
+              <Route path="/workouts/:id/createexercise/:id" element={<PrivateRouteRequiresAuth><CreateExercise/></PrivateRouteRequiresAuth>}/>
+              <Route path="workouts" element={<PrivateRouteRequiresAuth><ShowWorkouts/></PrivateRouteRequiresAuth>}/>
+              <Route path="/workouts/:id/exercise/exerciseId/:id" element={<PrivateRouteRequiresAuth><Exercise/></PrivateRouteRequiresAuth>} />   {/*this lets each exercise have their own page (adding /workouts/:id to it) and in the link I call exerceiseId/:id*/}
+              <Route path="/workouts/:id/exercise/exerciseId/:id/exercise/edit/:id" element={<PrivateRouteRequiresAuth><EditExercise/></PrivateRouteRequiresAuth>} />
+            </Routes>
         {/* <Home/> */}
         </BrowserRouter>
-
-      </AuthProvider>
-      
-      
+      </AuthProvider>    
     </div>
   );
 }

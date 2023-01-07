@@ -79,47 +79,46 @@ export default function Workouts(props) {
         }
     };
   
-
-
-
   return (
     <div className='container'>
-        <div className="background">
-          <div className="shape"></div>
-          <div className="shape"></div>
+      {/* <div className='workouts'> */}
+        <div className='wIntro'>
+          <h1 className='title'>{workout.title}</h1>
+          <p className='desc'>{workout.textBody}</p>
         </div>
-      <h1 className='title'>{workout.title}</h1>
-      <p className='desc'>{workout.textBody}</p>
-      <div className='actions'>
-        <button id = "deleteButton" onClick={deleteWorkout}>Delete Workout</button>
-        <div className='createworkoutlink'>
-          <Link to={`createexercise/${params.id}`}>
-              {/* <CreateExercise workoutId = {params.id}/> */}
-              Create Exercise
-          </Link>
+        <div className='actions'>
+          <div className='delButton'>
+            <button id = "deleteButton" onClick={deleteWorkout}>Delete Workout</button>
+          </div>
+          <div className='createworkoutlink'>
+            <Link to={`createexercise/${params.id}`}>
+                {/* <CreateExercise workoutId = {params.id}/> */}
+                Create Exercise
+            </Link>
+          </div>
         </div>
-      </div>
-      <div>
-        <div className="workouts" key={workout.id}>
-           {
-           exercise.map((exercise) => {
-            return <div className="workoutLinks exerciseLink" key={exercise.id}> 
-                      <Link to={`exercise/exerciseId/${exercise.id}`}>
-                        <div>
-                          <p>{exercise.name}</p>
-                          <p>Sets: {exercise.sets}</p>
-                          <p>Reps: {exercise.reps}</p>
-                          <p>Weight: {exercise.weight}</p>
-                        </div>
-                        
-                      </Link>
-                   </div>
-          })
-          // workout[0] === undefined || null ? <div></div> : <div>{workout[0].title}</div>
-          
-          }
+        <div>
+          <div className="workouts" key={workout.id}>
+            {
+            exercise.map((exercise) => {
+              return <div className="workoutLinks exerciseLink" key={exercise.id}> 
+                        <Link to={`exercise/exerciseId/${exercise.id}`}>
+                          <div>
+                            <p>{exercise.name}</p>
+                            <p>Sets: {exercise.sets}</p>
+                            <p>Reps: {exercise.reps}</p>
+                            <p>Weight: {exercise.weight}</p>
+                          </div>
+                          
+                        </Link>
+                    </div>
+            })
+            // workout[0] === undefined || null ? <div></div> : <div>{workout[0].title}</div>
+            
+            }
+          </div>
         </div>
-      </div>
+      {/* </div> */}
     </div>
   )
 }

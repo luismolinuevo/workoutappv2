@@ -31,15 +31,19 @@
     bottom: -80px;
 }
 form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 520px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
-    position: absolute;
+    /* position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
-    left: 50%;
+    left: 50%; */
     border-radius: 10px;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
@@ -78,7 +82,7 @@ input{
 ::placeholder{
     color: #e5e5e5;
 }
-button{
+.login-button {
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -110,4 +114,16 @@ button{
 }
 .social i{
   margin-right: 4px;
+}
+
+.Form {
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.linkToSignup {
+    padding-top:15px;
+    text-align: center;
 }

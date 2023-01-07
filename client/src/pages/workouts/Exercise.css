@@ -10,4 +10,64 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    word-wrap: break-all;
+}
+
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.eIntro {
+    padding-top: 35px;
+}
+
+.deleteButton {
+    /* margin: 0px; */
+    /* position: left; */
+    width: 250px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.13);
+    /* backdrop-filter: blur(10px); */
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 0px;
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    color:black;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.desc {
+    text-align: center;
+    font-size: 20px;
+}
+
+.exerciseLink {
+    word-wrap: break-word;
+}
+
+
+@media (max-width: 1100px) {
+    .actions {
+        flex-direction: column;
+        padding-top: 25px;
+        padding-bottom: 15px;
+        justify-content: center;
+    }
+
+    .deleteButton {
+        padding: 10px;
+        margin: auto;
+
+    }
+
+    .exerciseData {
+        padding-top: 30px;
+        font-size:25px;
+    }
+    
 }

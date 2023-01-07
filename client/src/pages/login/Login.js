@@ -26,6 +26,7 @@ function LoginPage() {
       await auth.authenticate(email, password);  //authenticate from authcontext 
     //   navigate(from, { replace: true });   //go to where user was before login
          navigate("/")
+        
     } catch (error) {
       setError(true);
     }
@@ -41,39 +42,42 @@ function LoginPage() {
   }
 
   return (
-    <div className="col-10 col-md-8 col-lg-7">
-      <div className="background">
-        <div className="shape"></div>
-        <div className="shape"></div>
+    <div className="container">
+      <div className="Form">
+        <form className="form1"  onSubmit={login}>
+          <h1 className="heading">Login</h1>
+            {errorMessage}
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              placeholder="Email"
+              value={data.email}
+              onChange={fieldChanged("email")}
+            />
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              placeholder="Password"
+              value={data.password}
+              onChange={fieldChanged("password")}
+            />
+            <button type="submit" className="login-button">
+              Login
+            </button>
+          {/* <div className="social">
+            <div className="go"><i className="fab fa-google"></i> Google</div>
+            <div className="fb"><i className="fab fa-facebook"></i> Facebook</div>
+          </div> */}
+          <div className="linkToSignup">
+            <p>Need an account?</p>
+            <Link to={"/signup"}>Signup</Link>
+          </div>
+
+        </form>
       </div>
-      <form className="form1"  onSubmit={login}>
-          {errorMessage}
-          <input
-            type="email"
-            className="form-control"
-            name="email"
-            placeholder="Email"
-            value={data.email}
-            onChange={fieldChanged("email")}
-          />
-          <input
-            type="password"
-            className="form-control"
-            name="password"
-            placeholder="Password"
-            value={data.password}
-            onChange={fieldChanged("password")}
-          />
-          <button type="submit" className="btn btn-primary ml-auto">
-            Login
-          </button>
-        <div className="social">
-          <div className="go"><i className="fab fa-google"></i> Google</div>
-          <div className="fb"><i className="fab fa-facebook"></i> Facebook</div>
-        </div>
-        <p>Need an account?</p>
-        <Link to={"/signup"}>Signup</Link>
-      </form>
+      
     </div>
   );
 }

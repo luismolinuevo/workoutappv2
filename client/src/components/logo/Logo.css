@@ -3,7 +3,35 @@
     height: 50px;
 }
 
-.Logo >a {
+.logo {
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+}
+
+.Logo > a {
     margin: 0px;
     padding: 0px;
+}
+
+@media (max-width: 800px) {
+    .logo_img{
+        width: 150px;
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 350px) {
+    .logo_img{
+        width: 135px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 260px) {
+    .logo_img{
+        width: 125px;
+        height: 30px;
+    }
 }

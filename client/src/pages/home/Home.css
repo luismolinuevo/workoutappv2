@@ -1,8 +1,194 @@
-*{
-  box-sizing: border-box;
+#header {
+    /* width: 100%; */
+    /* height: 100vh; */
+    height: 100%;
+    /* background: url("../../assets/landing_page.jpeg");
+    background-position: center/center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    
 }
-.Home {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+
+.hero {
+    width: 100%;
+    padding-top: 100px;
+    padding-left:  80px;
+    padding-right:  80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.landingPageImg {
+    width: 575px;  
+    height: 450px;
+}
+
+.heroWords {
+    text-align: right;
+    padding-left: 50px;
+}
+
+.heroWords p {
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.heropageHeading {
+    font-size: 65px;
+}
+
+.heroButtons {
+    padding-top: 20px;
+    
+}
+
+.getStarted {
+    border: 1px solid #DE6059;
+    padding: 13px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 15px;
+    color: white;
+    background-color: #DE6059;
+}
+
+.demoButton {
+    padding: 13px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+@media (max-width: 1110px) {
+    .hero {
+        padding-top: 80px;
+        padding-left:  0px;
+        padding-right:  0px; 
+    }
+
+    .landingPageImg {
+        width: 425px;  
+        height: 275px;
+    }
+
+    .heroWords {
+        text-align: right;
+        padding-left: 50px;
+    }
+    
+    .heroWords p {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    
+    .heropageHeading {
+        font-size: 55px;
+    }
+    
+    .heroButtons {
+        padding-top: 15px;
+        
+    }
+
+    .getStarted {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    .demoButton {
+        padding: 10px 15px;
+        font-size: 12px;
+        border: none;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .hero {
+        padding-top: 85px;
+    }
+
+    .landingPageImg {
+        display: none;
+    }
+
+    .heroWords {
+        text-align: right;
+        padding-left: 50px;
+    }
+    
+    .heroWords p {
+        font-size: 20px;
+        padding-top: 8px;
+    }
+    
+    .heropageHeading {
+        font-size: 53px;
+    }
+    
+    .heroButtons {
+        padding-top: 13px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        padding-top: 60px;
+        padding-left:  0px;
+        padding-right:  0px; 
+    }
+
+    .heroWords {
+        text-align: right;
+        padding-left: 0px;   /*get rid of space that I had on left*/
+    }
+
+    .heropageHeading {
+        font-size: 47px;
+    }
+
+    .heroWords p {
+        font-size: 17px;
+        padding-top: 8px;
+    }
+
+    .getStarted {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    .demoButton {
+        padding: 10px 15px;
+        font-size: 12px;
+        
+    }
+}
+
+@media (max-width: 260px) {
+    .hero {
+        padding-top: 40px;
+        padding-left:  0px;
+        padding-right:  0px; 
+    }
+
+    .heropageHeading {
+        font-size: 40px;
+    }
+
+    .heroWords p {
+        font-size: 15px;
+        padding-top: 8px;
+    }
+
+    .getStarted {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .demoButton {
+        padding: 10px 15px;
+        font-size: 12px;
+        
+    }
 }

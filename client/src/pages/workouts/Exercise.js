@@ -57,14 +57,12 @@ export default function Exercise() {
     
   return (
     <div className='container'>
-     <div className="background">
-          <div className="shape"></div>
-          <div className="shape"></div>
+      <div className='eIntro'>
+        <h1 className='title'>{exercise.name}</h1>
+        <p className='desc'>{exercise.desc}</p>
       </div>
-      <h1 className='title'>{exercise.name}</h1>
-      <p className='desc'>{exercise.desc}</p>
       <div className='actions'>
-        <button id = "deleteButton" onClick={deleteExercise}>Delete Excerise</button>
+        <button className= "deleteButton" onClick={deleteExercise}>Delete Excerise</button>
         <div className='createworkoutlink'>
           <Link to={`exercise/edit/${params.id}`}>Edit Exercise</Link> 
         </div>
@@ -74,7 +72,7 @@ export default function Exercise() {
         <p>Sets x Reps: {exercise.sets} x {exercise.reps}</p>
         <p>Weight: {exercise.weight}</p>
         <p>Personal Record: {exercise.pr}</p>
-        <p>Video Url: {exercise.videoUrl}</p>
+        <p className='exerciseLink'>Video Url: <a href={exercise.videoUrl}>Video</a></p>
       </div>
         
     </div>

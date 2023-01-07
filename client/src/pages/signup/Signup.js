@@ -36,65 +36,69 @@ export const Signup = () => {
       .required('Confirm password is required'),
   })
   return (
-    <Formik
-      initialValues={{
-        firstName: '',
-        lastName: '',
-        age: '',
-        weight: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      }}
-      validationSchema={validate}
-      onSubmit={values => {
-        console.log(values)
-        Axios({
-            method: "POST",
-            data: {
-              firstName: values.firstName,
-              lastName: values.lastName,
-              age: values.age,
-              weight: values.weight,
-              email: values.email,
-              password: values.password,
-            },
-            withCredentials: true,
-            url: "http://localhost:5000/api/auth/signup",
-          }).then((res) => console.log(res));
-      }}
-    >
-      {formik => (
-        <div>
-            <div className="background">
-                <div className="shape"></div>
-                <div className="shape"></div>
+    <div className='container'>
+      
+        <Formik
+          initialValues={{
+            firstName: '',
+            lastName: '',
+            age: '',
+            weight: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+          }}
+          validationSchema={validate}
+          onSubmit={values => {
+            console.log(values)
+            Axios({
+                method: "POST",
+                data: {
+                  firstName: values.firstName,
+                  lastName: values.lastName,
+                  age: values.age,
+                  weight: values.weight,
+                  email: values.email,
+                  password: values.password,
+                },
+                withCredentials: true,
+                url: "http://localhost:5000/api/auth/signup",
+              }).then((res) => console.log(res));
+          }}
+        >
+          {formik => (
+            <div>
+              <div className='signupForm'>
+                <Form className="form">
+                    <Box sx={{display: 'flex',
+                        justifyContent: 'space-between',
+                    }}>
+                    <Box>
+                        <TextField label="First Name" name="firstName" type="text"/>
+                        <TextField label="Last Name" name="lastName" type="text"/>
+                        <TextField label="Age" name="age" type="age" />
+                        <TextField label="Weight" name="weight" type="weight" />
+                    </Box>
+                    <Box>
+                        <TextField label="Email" name="email" type="email" />
+                        <TextField label="Password" name="password" type="password" />
+                        <TextField label="Confirm Password" name="confirmPassword" type="password" />
+                    </Box>
+                        </Box>
+                    <Box sx={{display: 'flex',                             
+                        justifyContent: 'space-between',
+                        
+                    }}>
+                        <button className ="signup-button" type="submit">Register</button>
+                        <button className ="signup-button" type="reset">Reset</button>
+                    </Box>
+                </Form>
+              </div>
             </div>
-          <Form className="form">
-              <Box sx={{display: 'flex',
-                  justifyContent: 'space-between',
-              }}>
-              <Box>
-                  <TextField label="First Name" name="firstName" type="text"/>
-                  <TextField label="last Name" name="lastName" type="text"/>
-                  <TextField label="Age" name="age" type="age" />
-                  <TextField label="Weight" name="weight" type="weight" />
-              </Box>
-              <Box>
-                  <TextField label="Email" name="email" type="email" />
-                  <TextField label="Password" name="password" type="password" />
-                  <TextField label="Confirm Password" name="confirmPassword" type="password" />
-              </Box>
-                  </Box>
-              <Box sx={{display: 'flex',
-                  justifyContent: 'space-between',
-              }}>
-                  <button type="submit">Register</button>
-                  <button type="reset">Reset</button>
-              </Box>
-          </Form>
-        </div>
-      )}
-    </Formik>
+          )}
+        </Formik>
+      
+    </div>
+    
   )
 }
