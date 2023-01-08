@@ -1,6 +1,12 @@
+* {
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
     /* min-height: 100vh;  take this off fixed the extra space that I had on the bottom */
-    /* height: 100%; */
+    height: 100%;
     width: 100%;
     padding: 0px;
     margin: 0px;
@@ -21,6 +27,23 @@ body {
       padding: 0px 100px;
       font-family: 'Poppins',sans-serif;
   }
+
+  .headings {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .workoutForms {
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.exerciseForm {
+  height: 700px;
+  width: 400px;
+}
 
 @media (max-width: 1110px) {
     .container {

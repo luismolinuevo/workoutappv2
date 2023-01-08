@@ -5,7 +5,6 @@ import * as Yup from 'yup';
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import "../../pages/workouts/CreateWorkouts.css"
 
 //onsumbit that post to api
 //navigate to back to workout page
@@ -57,8 +56,9 @@ export default function Createworkouts() {
 
   return (
     <div className="container">
-      <div className="createWorkouts">
+      <div className="workoutForms">
         <form onSubmit={handleSubmit}>
+          <h1 className="headings">Create Workout</h1>
           <div className="input-group">
             <input
               type="text"
@@ -76,7 +76,7 @@ export default function Createworkouts() {
               onChange={handleDescChange}
               autoFocus
             />
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="login-button">
               Create Workout
             </button>
           </div>

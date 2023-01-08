@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { Signup } from "./pages/signup/Signup";
 import LoginPage from "./pages/login/Login";
-import Test from "./components/extra/AuthButton"
 import Navbar from "./components/navbar/Navbar";
+// import Footer from "./components/footer/Footer"
 
 import ShowWorkouts from "./pages/workouts/ShowWorkouts"
 import CreateWorkouts from "./pages/workouts/Createworkouts"
@@ -38,6 +38,7 @@ function App() {
               <Route path="/workouts/:id/exercise/exerciseId/:id/exercise/edit/:id" element={<PrivateRouteRequiresAuth><EditExercise/></PrivateRouteRequiresAuth>} />
             </Routes>
         {/* <Home/> */}
+          {/* <Footer/> */}
         </BrowserRouter>
       </AuthProvider>    
     </div>

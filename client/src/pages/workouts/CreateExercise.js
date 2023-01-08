@@ -6,6 +6,7 @@ import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate, useParams } from "react-router-dom";
 
+
 //onsumbit that post to api
 export default function CreateExercise() {
     const [name, setName] = useState('');
@@ -90,78 +91,81 @@ export default function CreateExercise() {
       };
 
   return (
-  <div>
-        <form onSubmit={handleSubmit}>
-          <div className="input-group">
+    <div className="container">
+      <div className="workoutForms">
+        <form className = "exerciseForm" onSubmit={handleSubmit}>
+          <h1 className="headings">Create Workouts</h1>
+            <div className="input-group">
+              <input
+                type="text"
+                placeholder="Exercise Name"
+                value={name}
+                className="form-control"
+                onChange={handleNameChange}
+                autoFocus
+              />
             <input
-              type="text"
-              placeholder="Exercise Name"
-              value={name}
-              className="form-control"
-              onChange={handleNameChange}
-              autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise Reps"
-              value={reps}
-              className="form-control"
-              onChange={handleRepsChange}
-              autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise Sets"
-              value={sets}
-              className="form-control"
-              onChange={handleSetsChange}
-              autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise Weight"
-              value={weight}
-              className="form-control"
-              onChange={handleWeightChange}
-              autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise Rest Period"
-              value={restPeriod}
-              className="form-control"
-              onChange={handleRestPeriodChange}
-              autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise PR"
-              value={pr}
-              className="form-control"
-              onChange={handlePrChange}
-              autoFocus
-            />
+                type="text"
+                placeholder="Exercise Reps"
+                value={reps}
+                className="form-control"
+                onChange={handleRepsChange}
+                autoFocus
+              />
             <input
-              type="text"
-              placeholder="Exercise URL"
-              value={videoUrl}
-              className="form-control"
-              onChange={handleVideoUrlChange}
-              autoFocus
-            />
+                type="text"
+                placeholder="Exercise Sets"
+                value={sets}
+                className="form-control"
+                onChange={handleSetsChange}
+                autoFocus
+              />
             <input
-              type="text"
-              placeholder="Exercise Desc"
-              value={desc}
-              className="form-control"
-              onChange={handleDescChange}
-              autoFocus
-            />
-            <button type="submit" className="btn btn-primary">
-              Create Exercise
-            </button>
-          </div>
-        </form>
+                type="text"
+                placeholder="Exercise Weight"
+                value={weight}
+                className="form-control"
+                onChange={handleWeightChange}
+                autoFocus
+              />
+            <input
+                type="text"
+                placeholder="Exercise Rest Period"
+                value={restPeriod}
+                className="form-control"
+                onChange={handleRestPeriodChange}
+                autoFocus
+              />
+            <input
+                type="text"
+                placeholder="Exercise PR"
+                value={pr}
+                className="form-control"
+                onChange={handlePrChange}
+                autoFocus
+              />
+              <input
+                type="text"
+                placeholder="Exercise URL"
+                value={videoUrl}
+                className="form-control"
+                onChange={handleVideoUrlChange}
+                autoFocus
+              />
+              <input
+                type="text"
+                placeholder="Exercise Desc"
+                value={desc}
+                className="form-control"
+                onChange={handleDescChange}
+                autoFocus
+              />
+              <button type="submit" className="login-button">
+                Create Exercise
+              </button>
+            </div>
+          </form>
       </div>
+    </div>
   )
 }

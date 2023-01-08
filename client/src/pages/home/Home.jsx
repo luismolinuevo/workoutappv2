@@ -4,6 +4,7 @@ import "../home/Home.css"
 import landing from "../../assets/landing_page.jpeg"
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import Footer from "../../components/footer/Footer"
 
 export default function Home() {
   const auth = useAuth();  //from authcontext
@@ -48,6 +49,7 @@ export default function Home() {
             </div>
           </div>
       </div>
+      <Footer/>
     </section>
   )
 }

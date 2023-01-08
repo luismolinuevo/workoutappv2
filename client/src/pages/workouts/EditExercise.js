@@ -74,79 +74,81 @@ export default function EditExercise() {
       };
 
   return (
-    <div>
-        <h1>Edit Exercise</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="input-group">
+    <div className='container'>
+      <div className='workoutForms' >
+        <form className = "exerciseForm" onSubmit={handleSubmit}>
+            <h1 className='headings'>Edit Exercise</h1>
+            <div className="input-group">
+              <input
+                type="text"
+                placeholder="Exercise Name"
+                value={exercise.name}
+                className="form-control"
+                onChange={(e) => setExercise({name: e.target.value})}    //had to this is this way with the exercise object.It wasnt showing with normal state
+              //   autoFocus
+              />
             <input
-              type="text"
-              placeholder="Exercise Name"
-              value={exercise.name}
-              className="form-control"
-              onChange={(e) => setExercise({name: e.target.value})}    //had to this is this way with the exercise object.It wasnt showing with normal state
-            //   autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise Reps"
-              value={exercise.reps}
-              className="form-control"
-              onChange={(e) => setExercise({reps: e.target.value})}
-              autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise Sets"
-              value={exercise.sets}
-              className="form-control"
-              onChange={(e) => setExercise({sets: e.target.value})}
-              autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise Weight"
-              value={exercise.weight}
-              className="form-control"
-              onChange={(e) => setExercise({weight: e.target.value})}
-              autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise Rest Period"
-              value={exercise.restPeriod}
-              className="form-control"
-              onChange={(e) => setExercise({restPeriod: e.target.value})}
-              autoFocus
-            />
-          <input
-              type="text"
-              placeholder="Exercise PR"
-              value={exercise.pr}
-              className="form-control"
-              onChange={(e) => setExercise({pr: e.target.value})}
-              autoFocus
-            />
+                type="text"
+                placeholder="Exercise Reps"
+                value={exercise.reps}
+                className="form-control"
+                onChange={(e) => setExercise({reps: e.target.value})}
+                autoFocus
+              />
             <input
-              type="text"
-              placeholder="Exercise URL"
-              value={exercise.videoUrl}
-              className="form-control"
-              onChange={(e) => setExercise({videoUrl: e.target.value})}
-              autoFocus
-            />
+                type="text"
+                placeholder="Exercise Sets"
+                value={exercise.sets}
+                className="form-control"
+                onChange={(e) => setExercise({sets: e.target.value})}
+                autoFocus
+              />
             <input
-              type="text"
-              placeholder="Exercise Desc"
-              value={exercise.desc}
-              className="form-control"
-              onChange={(e) => setExercise({desc: e.target.value})}
-              autoFocus
-            />
-            <button type="submit" className="btn btn-primary">
-              Save Changes
-            </button>
-          </div>
-        </form>
-  </div>
+                type="text"
+                placeholder="Exercise Weight"
+                value={exercise.weight}
+                className="form-control"
+                onChange={(e) => setExercise({weight: e.target.value})}
+                autoFocus
+              />
+            <input
+                type="text"
+                placeholder="Exercise Rest Period"
+                value={exercise.restPeriod}
+                className="form-control"
+                onChange={(e) => setExercise({restPeriod: e.target.value})}
+                autoFocus
+              />
+            <input
+                type="text"
+                placeholder="Exercise PR"
+                value={exercise.pr}
+                className="form-control"
+                onChange={(e) => setExercise({pr: e.target.value})}
+                autoFocus
+              />
+              <input
+                type="text"
+                placeholder="Exercise URL"
+                value={exercise.videoUrl}
+                className="form-control"
+                onChange={(e) => setExercise({videoUrl: e.target.value})}
+                autoFocus
+              />
+              <input
+                type="text"
+                placeholder="Exercise Desc"
+                value={exercise.desc}
+                className="form-control"
+                onChange={(e) => setExercise({desc: e.target.value})}
+                autoFocus
+              />
+              <button type="submit" className="login-button">
+                Save Changes
+              </button>
+            </div>
+          </form>
+      </div>
+    </div>
   )
 }

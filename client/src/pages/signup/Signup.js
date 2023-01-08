@@ -5,14 +5,17 @@ import * as Yup from 'yup';
 import Axios from "axios";
 import {Box} from "@mui/system";
 import './Signup.css';
+import { useNavigate } from "react-router-dom";
 
 export const Signup = () => {
-    const [registerFirstname, setRegisterFirstname] = useState("");
-    const [registerLastname, setRegisterLastname] = useState("");
-    const [age, setAge] = useState(0);
-    const [weight, setWeight] = useState(0);
-    const [email, setEmail] = useState("");
-    const [registerPassword, setRegisterPassword] = useState("");
+  const navigate = useNavigate();
+
+    // const [registerFirstname, setRegisterFirstname] = useState("");
+    // const [registerLastname, setRegisterLastname] = useState("");
+    // const [age, setAge] = useState(0);
+    // const [weight, setWeight] = useState(0);
+    // const [email, setEmail] = useState("");
+    // const [registerPassword, setRegisterPassword] = useState("");
 
   const validate = Yup.object({
     firstName: Yup.string()
@@ -63,7 +66,7 @@ export const Signup = () => {
                 },
                 withCredentials: true,
                 url: "http://localhost:5000/api/auth/signup",
-              }).then((res) => console.log(res));
+              }).then((res) => console.log(res)).then(navigate("/"));
           }}
         >
           {formik => (

@@ -1,0 +1,28 @@
+.footer {
+    /* height: calc(100% - 60px);
+     */
+     height: 40px;
+     position:fixed;
+     right: 0;
+     left:0;
+     bottom:0;
+     z-index: -1;
+     text-align: center;
+     
+}
+
+/* .footerChild {
+
+} */
+
+#footer {
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkedin {
+    color: white;
+    text-align: center;
+}

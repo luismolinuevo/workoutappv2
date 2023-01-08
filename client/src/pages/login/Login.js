@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import './Login.css'
+
 function LoginPage() {
   const auth = useAuth();  //from authcontext
   const navigate = useNavigate();  //helps navigate to different routes
@@ -77,7 +78,6 @@ function LoginPage() {
 
         </form>
       </div>
-      
     </div>
   );
 }
